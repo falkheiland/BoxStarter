@@ -1,0 +1,8 @@
+choco install -y Microsoft-Hyper-V-All --source="'windowsFeatures'"
+choco install -y Microsoft-Hyper-V --source="'windowsFeatures'"
+choco install -y Microsoft-Hyper-V-Tools-All --source="'windowsFeatures'"
+choco install -y Microsoft-Hyper-V-Management-PowerShell --source="'windowsFeatures'"
+choco install -y Microsoft-Hyper-V-Hypervisor --source="'windowsFeatures'"
+choco install -y Microsoft-Hyper-V-Services --source="'windowsFeatures'"
+choco install -y Microsoft-Hyper-V-Management-Clients --source="'windowsFeatures'"
+choco install -y Microsoft-Windows-Subsystem-Linux --source="'windowsFeatures'"
