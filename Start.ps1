@@ -15,7 +15,7 @@ function executeScript
 {
     Param ([string]$script)
     Write-Host "executing $helperUri/$script ..."
-    iex ((New-Object net.webclient).DownloadString("$helperUri/$script"))
+    Invoke-Expression ((New-Object net.webclient).DownloadString("$helperUri/$script"))
 }
 
 #--- Setting up Windows ---
