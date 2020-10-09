@@ -1,7 +1,8 @@
-Leveraging [Boxstarter](http://boxstarter.org) and [Chocolatey](http://chocolatey.org) to quickly install most of the developers tools I use for my daily job!
+This project aimes to quickly setup a newly installed Windows 10.
+It si leveraging [Boxstarter](http://boxstarter.org) and [Chocolatey](http://chocolatey.org) to quickly install most of the tools I use.
 
-You can read more about it on my blog post "[Automating my development machine installation ](https://laurentkempe.com/2018/06/01/Automating-development-machine-installation/)"
+I havely borrowed from [Laurent Kempe](https://laurentkempe.com/2018/06/01/Automating-development-machine-installation/).
 
 Some script part were taken from [Microsoft/windows-dev-box-setup-scripts](https://github.com/Microsoft/windows-dev-box-setup-scripts)
 
-<a href='http://boxstarter.org/package/nr/url?https://raw.githubusercontent.com/falkheiland/Boxstarter/master/Start.ps1'>Start</a>
+[<a href='http://boxstarter.org/package/nr/url?https://raw.githubusercontent.com/falkheiland/Boxstarter/master/Start.ps1'>Start</a>]
