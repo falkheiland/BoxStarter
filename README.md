@@ -5,4 +5,4 @@ I havely borrowed from [Laurent Kempe](https://laurentkempe.com/2018/06/01/Autom
 
 Some script part were taken from [Microsoft/windows-dev-box-setup-scripts](https://github.com/Microsoft/windows-dev-box-setup-scripts)
 
-[<a href='http://boxstarter.org/package/nr/url?https://raw.githubusercontent.com/falkheiland/Boxstarter/master/Start.ps1'>Start</a>]
+[<a href='http://boxstarter.org/package/nr/url?https://raw.githubusercontent.com/falkheiland/BoxStarter/main/Start.ps1'>Start</a>]
