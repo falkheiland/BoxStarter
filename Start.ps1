@@ -39,9 +39,6 @@ executeScript "PersonalProjects.ps1";
 #--- Configure Windows environment .gitconfig, PowerShell ---
 executeScript "ConfigureWindowsEnvironment.ps1";
 
-#--- https://gist.github.com/alirobe/7f3b34ad89a159e6daa1 ---
-executeScript "reclaimWindows10.ps1";
-
 Enable-MicrosoftUpdate
 Install-WindowsUpdate -acceptEula
 Enable-UAC
