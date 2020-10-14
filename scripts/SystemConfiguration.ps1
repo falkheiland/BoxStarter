@@ -10,8 +10,6 @@ Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Policies\DataCollection" -Name "AllowTelemetry" -Type DWord -Value 0
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection" -Name "AllowTelemetry" -Type DWord -Value 0
 Disable-ScheduledTask -TaskName "Microsoft\Windows\Application Experience\Microsoft Compatibility Appraiser" | Out-Null
-Write-Host "## SystemConfiguration - Microsoft Compatibility Appraiser" -ForegroundColor "Yellow"
-<#
 Disable-ScheduledTask -TaskName "Microsoft\Windows\Application Experience\ProgramDataUpdater" | Out-Null
 Disable-ScheduledTask -TaskName "Microsoft\Windows\Autochk\Proxy" | Out-Null
 Disable-ScheduledTask -TaskName "Microsoft\Windows\Customer Experience Improvement Program\Consolidator" | Out-Null
@@ -113,7 +111,7 @@ Disable-ScheduledTask -TaskName "Microsoft\Windows\Windows Error Reporting\Queue
 Stop-Service "DiagTrack" -WarningAction SilentlyContinue
 Set-Service "DiagTrack" -StartupType Disabled
 
-Write-Host "## SystemConfiguration | Security Tweaks" -ForegroundColor "Yellow"
+Write-Host "## SystemConfiguration - Security Tweaks" -ForegroundColor "Yellow"
 
 # Disable obsolete SMB 1.0 protocol - Disabled by default since 1709
 Set-SmbServerConfiguration -EnableSMB1Protocol $false -Force
@@ -141,7 +139,7 @@ ElseIf ([System.Environment]::OSVersion.Version.Build -ge 15063)
 # Enable F8 boot menu options
 bcdedit /set `{current`} bootmenupolicy Legacy | Out-Null
 
-Write-Host "## SystemConfiguration | Service Tweaks" -ForegroundColor "Yellow"
+Write-Host "## SystemConfiguration - Service Tweaks" -ForegroundColor "Yellow"
 
 # Disable Windows Update automatic restart
 # Note: This doesn't disable the need for the restart but rather tries to ensure that the restart doesn't happen in the least expected moment. Allow the machine to restart as soon as possible anyway.
@@ -202,7 +200,7 @@ powercfg /X standby-timeout-dc 0
 # Disable Fast Startup
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Power" -Name "HiberbootEnabled" -Type DWord -Value 0
 
-Write-Host "## SystemConfiguration | UI Tweaks" -ForegroundColor "Yellow"
+Write-Host "## SystemConfiguration - UI Tweaks" -ForegroundColor "Yellow"
 
 # Disable Action Center
 If (!(Test-Path "HKCU:\SOFTWARE\Policies\Microsoft\Windows\Explorer"))
@@ -296,7 +294,7 @@ If (!([System.Windows.Forms.Control]::IsKeyLocked('NumLock')))
   $wsh.SendKeys('{NUMLOCK}')
 }
 
-Write-Host "## SystemConfiguration | Explorer UI Tweaks" -ForegroundColor "Yellow"
+Write-Host "## SystemConfiguration - Explorer UI Tweaks" -ForegroundColor "Yellow"
 
 #adds things back in your left pane like recycle bin
 Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "NavPaneShowAllFolders" -Value 1
@@ -405,7 +403,7 @@ Set-ItemProperty -Path "HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVers
 Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "DisableThumbnailCache" -Type DWord -Value 1
 Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "DisableThumbsDBOnNetworkFolders" -Type DWord -Value 1
 
-Write-Host "## SystemConfiguration | Application Tweaks" -ForegroundColor "Yellow"
+Write-Host "## SystemConfiguration - Application Tweaks" -ForegroundColor "Yellow"
 
 # Disable built-in Adobe Flash in IE and Edge
 If (!(Test-Path "HKLM:\SOFTWARE\Policies\Microsoft\Internet Explorer"))
@@ -448,6 +446,3 @@ Disable-WindowsOptionalFeature -Online -FeatureName "Printing-XPSServices-Featur
 
 # Remove Default Fax Printer
 Remove-Printer -Name "Fax" -ErrorAction SilentlyContinue
-
-
-#>
