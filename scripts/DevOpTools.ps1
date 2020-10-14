@@ -1,7 +1,5 @@
 Write-Host "# DevOpsTools" -ForegroundColor "Yellow"
 
-
-choco install -y 7zip.install
 choco install -y chocolatey
 choco install -y chocolatey-core.extension
 choco install -y chocolatey-dotnetfx.extension
