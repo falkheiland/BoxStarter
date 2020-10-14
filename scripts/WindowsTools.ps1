@@ -1,6 +1,6 @@
 Write-Host "# WindowsTools" -ForegroundColor "Yellow"
 
-choco install -y 7zip.install --limitoutput
+choco install -y 7zip.install
 choco install -y brave
 choco install -y citrix-receiver
 choco install -y f.lux.install
