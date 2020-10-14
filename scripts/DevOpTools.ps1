@@ -1,5 +1,7 @@
 Write-Host "# DevOpsTools" -ForegroundColor "Yellow"
 
+Write-Host "## DevOpsTools | choco" -ForegroundColor "Yellow"
+
 choco install -y chocolatey
 choco install -y chocolatey-core.extension
 choco install -y chocolatey-dotnetfx.extension
@@ -29,3 +31,7 @@ choco install -y TelnetClient -source windowsfeatures
 choco install -y vim
 choco install -y vscode
 choco install -y winscp
+
+Write-Host "## DevOpsTools | vscode extensions" -ForegroundColor "Yellow"
+
+code --install-extension shan.code-settings-sync
