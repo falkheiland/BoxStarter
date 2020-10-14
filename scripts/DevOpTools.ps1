@@ -48,6 +48,7 @@ Invoke-WebRequest -Uri https://gist.githubusercontent.com/falkheiland/d221d84a7b
 ) | ForEach-Object {
   Copy-Item -Path $ProfileFile -Destination $_
 }
+Remove-Item -Path $ProfileFile
 
 # Copy Windows Terminal settings.json
 
@@ -55,4 +56,5 @@ $SettingsFile = '{0}\documents\settings.json' -f $HOME
 $SettingsDestination = '{0}\documents\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\' -f $HOME
 #Invoke-WebRequest -Uri https://gist.github.com/falkheiland/a227aeb50dfb380b66a6f4e9c983acff -OutFile $SettingsFile -UseBasicParsing
 Invoke-WebRequest -Uri https://gist.githubusercontent.com/falkheiland/a227aeb50dfb380b66a6f4e9c983acff/raw/54bdc68468ee8aba8687b09ca8e39a294c22b46b/Windows%2520Terminal%2520settings.json -OutFile $SettingsFile -UseBasicParsing
-Copy-Item -Path $SettingsFile -Destination ('{0}{1}' -f $SettingsDestination, $SettingsFile)
+Copy-Item -Path $SettingsFile -Destination ('{0}{1}' -f $SettingsDestination, 'settings.json')
+Remove-Item -Path $SettingsFile
