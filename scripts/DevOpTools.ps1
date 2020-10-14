@@ -25,8 +25,6 @@ choco install -y poshgit
 choco install -y postman
 choco install -y pwsh
 choco install -y rsat
-choco install -y sharex
-choco install -y sharex
 choco install -y TelnetClient -source windowsfeatures
 choco install -y vim
 choco install -y vscode
