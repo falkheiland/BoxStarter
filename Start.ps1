@@ -21,6 +21,7 @@ function executeScript
 }
 
 #--- Setting up Windows ---
+executeScript "Powershell.ps1";
 executeScript "SystemConfiguration.ps1";
 executeScript "RemoveDefaultApps.ps1";
 executeScript "DevOpTools.ps1";
@@ -41,6 +42,6 @@ executeScript "ConfigureWindowsEnvironment.ps1";
 #--- https://gist.github.com/alirobe/7f3b34ad89a159e6daa1 ---
 executeScript "reclaimWindows10.ps1";
 
-Enable-UAC
 Enable-MicrosoftUpdate
 Install-WindowsUpdate -acceptEula
+Enable-UAC
