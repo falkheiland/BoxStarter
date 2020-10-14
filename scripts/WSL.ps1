@@ -9,7 +9,7 @@ RefreshEnv
 Write-Host "## WSL - Version 2 Kernel update and activation" -ForegroundColor "Yellow"
 Invoke-WebRequest -Uri https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi -OutFile ~/wsl_update_x64.msi -UseBasicParsing
 Start-Process ~/wsl_update_x64.msi -ArgumentList '/quiet' -Wait
-wsl --set-default-version 2
+#wsl --set-default-version 2
 RefreshEnv
 
 #--- Ubuntu ---
