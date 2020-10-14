@@ -1,3 +1,5 @@
+Write-Host "# Start" -ForegroundColor "Yellow"
+
 Disable-UAC
 
 # Get the base URI path from the ScriptToCall value
