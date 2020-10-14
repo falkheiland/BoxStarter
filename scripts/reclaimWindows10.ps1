@@ -1,3 +1,5 @@
+Write-Host "# reclaimWindows10" -ForegroundColor "Yellow"
+
 ##########
 # Tweaked Win10 Initial Setup Script
 # Primary Author: Disassembler <disassembler@dasm.cz>
@@ -2783,4 +2785,4 @@ If ($args)
 }
 
 # Call the desired tweak functions
-$tweaks | ForEach-Object { Invoke-Expression $_ }
+$tweaks | ForEach-Object { Invoke-Expression $_ }on $_ }
