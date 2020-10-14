@@ -5,9 +5,9 @@ Write-Host "# SystemConfiguration" -ForegroundColor "Yellow"
 
 Write-Host "## SystemConfiguration - Privacy Tweaks" -ForegroundColor "Yellow"
 
-Write-Host "### SystemConfiguration - Privacy Tweaks - DisableTelemetry" -ForegroundColor "Yellow"
 # DisableTelemetry
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DataCollection" -Name "AllowTelemetry" -Type DWord -Value 0
+<#
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Policies\DataCollection" -Name "AllowTelemetry" -Type DWord -Value 0
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection" -Name "AllowTelemetry" -Type DWord -Value 0
 Disable-ScheduledTask -TaskName "Microsoft\Windows\Application Experience\Microsoft Compatibility Appraiser" | Out-Null
@@ -17,7 +17,6 @@ Disable-ScheduledTask -TaskName "Microsoft\Windows\Customer Experience Improveme
 Disable-ScheduledTask -TaskName "Microsoft\Windows\Customer Experience Improvement Program\UsbCeip" | Out-Null
 Disable-ScheduledTask -TaskName "Microsoft\Windows\DiskDiagnostic\Microsoft-Windows-DiskDiagnosticDataCollector" | Out-Null
 
-Write-Host "### SystemConfiguration - Privacy Tweaks - Disable Web Search in Start Menu" -ForegroundColor "Yellow"
 # Disable Web Search in Start Menu
 Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search" -Name "BingSearchEnabled" -Type DWord -Value 0
 Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search" -Name "CortanaConsent" -Type DWord -Value 0
@@ -450,3 +449,4 @@ Disable-WindowsOptionalFeature -Online -FeatureName "Printing-XPSServices-Featur
 Remove-Printer -Name "Fax" -ErrorAction SilentlyContinue
 
 
+#>
