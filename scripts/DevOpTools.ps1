@@ -32,19 +32,16 @@ choco install -y vim
 choco install -y vscode
 choco install -y winscp
 
-Write-Host "## DevOpsTools - vscode extensions" -ForegroundColor "Yellow"
-
-code --install-extension shan.code-settings-sync
-
 # Copy (Windows)PowerShell Profil
 
+New-Item -ItemType Directory ('{0}\PowerShell' -f [Environment]::GetFolderPath("MyDocuments")) -ErrorAction SilentlyContinue
 $ProfileFile = '{0}\profile.ps1' -f $HOME
 Invoke-WebRequest -Uri https://gist.github.com/falkheiland/d221d84a7b2a383854747c127a612a89 -OutFile $ProfileFile -UseBasicParsing
 @(
-  ('{0}\Documents\Powershell\Microsoft.PowerShell_profile.ps1' -f $HOME),
-  ('{0}\Documents\Powershell\Microsoft.VSCode_profile.ps1' -f $HOME),
-  ('{0}\Documents\WindowsPowershell\Microsoft.PowerShell_profile.ps1' -f $HOME)
-  ('{0}\Documents\WindowsPowershell\Microsoft.VSCode_profile.ps1' -f $HOME)
+  ('{0}\Powershell\Microsoft.PowerShell_profile.ps1' -f [Environment]::GetFolderPath("MyDocuments")),
+  ('{0}\Powershell\Microsoft.VSCode_profile.ps1' -f [Environment]::GetFolderPath("MyDocuments")),
+  ('{0}\WindowsPowershell\Microsoft.PowerShell_profile.ps1' -f [Environment]::GetFolderPath("MyDocuments"))
+  ('{0}\WindowsPowershell\Microsoft.VSCode_profile.ps1' -f [Environment]::GetFolderPath("MyDocuments"))
 ) | ForEach-Object {
   Copy-Item -Path $ProfileFile -Destination $_
 }
