@@ -36,9 +36,6 @@ executeScript "Docker.ps1";
 #--- Get personal projects ---
 executeScript "PersonalProjects.ps1";
 
-#--- Configure Windows environment .gitconfig, PowerShell ---
-executeScript "ConfigureWindowsEnvironment.ps1";
-
 Enable-MicrosoftUpdate
 Install-WindowsUpdate -acceptEula
 Enable-UAC
