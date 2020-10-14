@@ -34,7 +34,8 @@ choco install -y winscp
 
 # Copy (Windows)PowerShell Profil
 
-New-Item -ItemType Directory ('{0}\PowerShell' -f [Environment]::GetFolderPath("MyDocuments")) -ErrorAction SilentlyContinue
+$DocumentPath = ('{0}\PowerShell' -f [Environment]::GetFolderPath("MyDocuments"))
+New-Item -ItemType Directory -Path $DocumentPath -ErrorAction SilentlyContinue
 $ProfileFile = '{0}\profile.ps1' -f $HOME
 Invoke-WebRequest -Uri https://gist.github.com/falkheiland/d221d84a7b2a383854747c127a612a89 -OutFile $ProfileFile -UseBasicParsing
 @(
