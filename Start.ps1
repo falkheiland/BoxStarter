@@ -39,5 +39,3 @@ executeScript "PersonalProjects.ps1";
 Enable-MicrosoftUpdate
 Install-WindowsUpdate -acceptEula
 Enable-UAC
-
-shutdown -r -t 10
