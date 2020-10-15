@@ -13,6 +13,11 @@ $helperUri = $helperUri.Substring(0, $helperUri.LastIndexOf("/"))
 $helperUri += "/scripts"
 Write-Host "helper script base URI is $helperUri"
 
+# General boxstarter settings
+$Boxstarter.RebootOk = $true # Allow reboots?
+$Boxstarter.NoPassword = $false # Is this a machine with no login password?
+$Boxstarter.AutoLogin = $true # Save my password securely and auto-login after a reboot
+
 function executeScript
 {
     Param ([string]$script)
