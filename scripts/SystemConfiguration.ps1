@@ -221,6 +221,7 @@ Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Personalizatio
 Set-ItemProperty -Path "HKCU:\Control Panel\Accessibility\StickyKeys" -Name "Flags" -Type String -Value "506"
 
 # Show Task Manager details - Applicable to 1607 and later - Although this functionality exist even in earlier versions, the Task Manager's behavior is different there and is not compatible with this tweak
+<#
 $taskmgr = Start-Process -WindowStyle Hidden -FilePath taskmgr.exe -PassThru
 Do
 {
@@ -230,6 +231,7 @@ Do
 Stop-Process $taskmgr
 $preferences.Preferences[28] = 0
 Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\TaskManager" -Name "Preferences" -Type Binary -Value $preferences.Preferences
+#>
 
 # Show file operations details
 If (!(Test-Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\OperationStatusManager"))
