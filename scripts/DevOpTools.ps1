@@ -1,6 +1,6 @@
-Write-Host "# DevOpsTools" -ForegroundColor "Yellow"
+Write-Host '# DevOpsTools' -ForegroundColor 'Yellow'
 
-Write-Host "## DevOpsTools - choco" -ForegroundColor "Yellow"
+Write-Host '## DevOpsTools - choco' -ForegroundColor 'Yellow'
 
 choco install -y chocolatey
 choco install -y chocolatey-core.extension
@@ -18,6 +18,7 @@ choco install -y hackfont
 choco install -y mc
 choco install -y microsoft-windows-terminal
 choco install -y mRemoteNG
+choco install -y neovim
 choco install -y notepadplusplus
 choco install -y openssh
 choco install -y peco
@@ -28,7 +29,6 @@ choco install -y postman
 choco install -y pwsh
 choco install -y rsat --params '"/AD"'
 choco install -y TelnetClient -source windowsfeatures
-choco install -y vim
 choco install -y vscode
 choco install -y winscp
 
