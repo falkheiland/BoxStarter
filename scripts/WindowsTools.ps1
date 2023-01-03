@@ -11,5 +11,6 @@ choco install -y librewolf
 choco install -y openjdk
 choco install -y powertoys
 choco install -y sharex
+choco install -y simplewall
 choco install -y slack
 choco install -y vlc
