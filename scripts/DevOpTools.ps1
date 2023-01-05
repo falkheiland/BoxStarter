@@ -27,7 +27,7 @@ choco install -y plantuml
 choco install -y poshgit
 choco install -y postman
 choco install -y pwsh
-choco install -y rsat --params '"/AD"'
+choco install -y rsat --params '"/AD /DHCP /GP"'
 choco install -y SwitchHosts
 choco install -y TelnetClient -source windowsfeatures
 choco install -y vscode
