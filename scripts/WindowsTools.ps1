@@ -1,5 +1,6 @@
 Write-Host '# WindowsTools' -ForegroundColor 'Yellow'
 
+choco install -y ChocolateyGUI
 choco install -y 7zip.install
 choco install -y citrix-receiver
 choco install -y eartrumpet
